@@ -117,7 +117,7 @@ const ProblemCard = ({ problem }) => {
 
                   <a target='_blank' href={`https://codeforces.com/problemset/problem/${problem.contestId}/${problem.index}`}>{problem.name}</a><br />
                   <strong>Rating : {problem.rating}</strong>
-                  
+
             </div>
       );
 };
