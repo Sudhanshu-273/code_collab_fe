@@ -1,4 +1,5 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
+const withMT = require('@material-tailwind/react/utils/withMT')
 
 module.exports = {
   mode: 'jit',

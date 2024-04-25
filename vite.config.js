@@ -24,8 +24,8 @@ export default defineConfig({
       },
       includeAssets: ['/assets/**/*', '/favicon/**/*', '/manifest.json', '/robots.txt', '/fonts/**/*'],
       manifest: {
-        name: 'Code Buddy - Your coding partner',
-        short_name: 'CodeBuddy',
+        name: 'Code Collab - Your coding partner',
+        short_name: 'CodeCollab',
         description:
           'This Web Application aims to provide a plateform for the users using which they can code online, share the code with friends have a look over varoius coding contest.',
         theme_color: '#ffffff',
