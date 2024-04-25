@@ -54,6 +54,14 @@ export default function Example({data}) {
 
       const img = 'https://cdn.iconscout.com/icon/free/png-256/free-code-forces-3628695-3029920.png';
 
+      if(Array.isArray(data) && data.length < 0) {
+            return (
+                  <h1>Cannot Load Problems</h1>
+            )
+      }
+
+      console.log(data.length)
+
       return (
             <div className="container mx-auto w-[800px]">
                   {data.slice(0, 5).map((problem, idx) => (
@@ -62,7 +70,10 @@ export default function Example({data}) {
                                           <div className="flex min-w-0 gap-x-4">
                                                 <img className="h-12 w-12 flex-none" src={img} alt="" />
                                                 <div className="min-w-0 flex-auto">
-                                                      <p className="text-sm font-semibold leading-6 text-gray-900">{problem.name}</p>
+                                                      <p className="text-sm font-semibold leading-6 text-gray-900">
+                                                            <a href={`https://www.codeforces.com/`}></a>
+                                                            {problem.name}
+                                                      </p>
                                                       <p className="mt-1 truncate text-xs leading-5 text-gray-500">{problem.rating || 'Unrated'}</p>
                                                 </div>
                                           </div>
