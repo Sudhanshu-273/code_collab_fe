@@ -15,6 +15,7 @@ export default function AllContests() {
     const fetchContests = async () => {
       const res = await axios.get(ALL_CONTEST_URL);
       setAllContests(res?.data);
+      console.log(res.data);
     };
     fetchContests();
   }, []);
