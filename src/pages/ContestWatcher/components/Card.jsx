@@ -13,6 +13,7 @@ export default function Card({
   end,
   site_logo,
   currently_running,
+  logo,
   hideSite = false,
 }) {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ export default function Card({
           <img
             className='cursor-pointer w-[30px] md:w-[60px]'
             // width='60px'
-            src={site_logo}
+            src={logo}
             alt='Logo'
           />
         </div>
@@ -64,7 +65,7 @@ export default function Card({
               )}
               <div>
                 <span className='opacity-60 whitespace-nowrap text-xs md:text-sm'>Lasts for</span>{' '}
-                <span className='whitespace-nowrap text-xs md:text-sm'>{`${((duration/60)/60)} hours`}</span>
+                <span className='whitespace-nowrap text-xs md:text-sm'>{`${Math.floor(duration / 3600)}hr ${Math.floor((duration%3600)/60)}mins `}</span>
               </div>
             </div>
           </div>

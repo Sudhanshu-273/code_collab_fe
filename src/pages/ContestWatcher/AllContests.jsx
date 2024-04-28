@@ -14,8 +14,10 @@ export default function AllContests() {
   useEffect(() => {
     const fetchContests = async () => {
       const res = await axios.get(ALL_CONTEST_URL);
-      setAllContests(res?.data);
-      console.log(res.data);
+      const arr= res.data;
+      arr.reverse();
+      setAllContests(arr);
+      console.log(arr);
     };
     fetchContests();
   }, []);
