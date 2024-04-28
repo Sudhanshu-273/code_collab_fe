@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router';
 import constants from '../constants.js';
 import useTimeString from '../../../hooks/useTimeString';
 import calendar from '../../../assets/calendar.svg';
-import 'add-to-calendar-button';
 
 export default function Card({
       event,
