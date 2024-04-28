@@ -15,6 +15,11 @@ const DefaultRoutes = [
     customClass: 'link-hover',
   },
   {
+    navDisplay: 'Ask AI',
+    path: '/chatbot',
+    customClass: 'link-hover',
+  },
+  {
     navDisplay: 'Code Room',
     path: '/code-room',
     customClass: 'link-hover',
@@ -53,6 +58,11 @@ const UserRoutes = [
     customClass: 'link-hover',
   },
   {
+    navDisplay: 'Ask AI',
+    path: '/chatbot',
+    customClass: 'link-hover',
+  },
+  {
     navDisplay: 'Code Room',
     path: '/code-room',
     customClass: 'link-hover',
@@ -77,6 +87,11 @@ const AdminRoutes = [
   {
     navDisplay: 'Contest Watcher',
     path: '/contest-watcher',
+    customClass: 'link-hover',
+  },
+  {
+    navDisplay: 'Ask AI',
+    path: '/chatbot',
     customClass: 'link-hover',
   },
   {

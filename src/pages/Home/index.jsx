@@ -12,6 +12,7 @@ import filter from '../../assets/filter.svg';
 import Feedback from './components/Feedback';
 import Loader from '../../components/Loader';
 import Share from '../../assets/Share.svg';
+import Chatbot from '../../components/Chatbot';
 // import {codeCollabImage} from "../../../public/assets/images/codeCollabLogo_No_Bg.png";
 export default function Home() {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -138,6 +139,7 @@ export default function Home() {
         </div>
 
         <Feedback />
+        <Chatbot />
       </main>
       <Footer />
     </>
