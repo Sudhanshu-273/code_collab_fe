@@ -10,6 +10,7 @@ import Unathorized from '../pages/Unathorized';
 import { ROLES } from '../constants';
 import Logout from '../pages/Logout';
 import ContestWatcher from '../pages/ContestWatcher';
+import ChatbotPage from '../pages/AskAI';
 import Profile from '../pages/Profile';
 import AllSnippet from '../pages/Snippets/AllSnippet';
 import SnippetPage from '../pages/Snippets/SnippetPage';
@@ -43,6 +44,8 @@ export default function RouteController() {
             <Route path='/ide' element={<IDE />} />
 
             <Route path='/contest-watcher/*' element={<ContestWatcher />} />
+            <Route path='/chatbot/*' element={<ChatbotPage />} />
+
             <Route path='/code-room/*' element={<CodeRoom />} />
 
             <Route path='/logout' element={<Logout />} />
