@@ -11,6 +11,7 @@ import { ROLES } from '../constants';
 import Logout from '../pages/Logout';
 import ContestWatcher from '../pages/ContestWatcher';
 import ChatbotPage from '../pages/AskAI';
+import CommunicatePage from '../pages/Communicate';
 import Profile from '../pages/Profile';
 import AllSnippet from '../pages/Snippets/AllSnippet';
 import SnippetPage from '../pages/Snippets/SnippetPage';
@@ -20,6 +21,7 @@ import Problem from '../pages/Problem';
 import Admin from '../pages/Admin';
 import axios from '../api/axios';
 import Settings from '../pages/Settings';
+import RoomPage from '../pages/CommunicateRoom';
 
 export default function RouteController() {
   useEffect(() => {
@@ -47,6 +49,9 @@ export default function RouteController() {
             <Route path='/chatbot/*' element={<ChatbotPage />} />
 
             <Route path='/code-room/*' element={<CodeRoom />} />
+            <Route path='/communicate/*' element={<CommunicatePage />} />
+            <Route path='/communicate/:roomId*' element={<RoomPage />} />
+
 
             <Route path='/logout' element={<Logout />} />
             <Route path='/user/*' element={<Profile />} />

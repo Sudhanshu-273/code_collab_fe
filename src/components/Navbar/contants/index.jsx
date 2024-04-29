@@ -25,6 +25,11 @@ const DefaultRoutes = [
     customClass: 'link-hover',
   },
   {
+    navDisplay: 'Communicate',
+    path: '/communicate',
+    customClass: 'link-hover',
+  },
+  {
     navDisplay: (
       <div className='relative flex items-center justify-center w-8 h-8 shadow rounded-full'>
         <UserSVG />
@@ -60,6 +65,11 @@ const UserRoutes = [
   {
     navDisplay: 'Ask AI',
     path: '/chatbot',
+    customClass: 'link-hover',
+  },
+  {
+    navDisplay: 'Communicate',
+    path: '/communicate',
     customClass: 'link-hover',
   },
   {
