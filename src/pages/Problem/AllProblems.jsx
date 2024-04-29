@@ -7,22 +7,27 @@ import Loader from '../../components/Loader';
 import { useContext } from 'react';
 import AuthContext from '../../context/AuthProvider';
 import Example from './AllProblemstw';
-import {  UnderlineTabs } from './Tabstw';
+import { UnderlineTabs } from './Tabstw';
 import Pagination from './Paginationtw';
+import { toast } from 'react-toastify';
 export default function AllProblems() {
       const [AllProblems, setAllProblems] = React.useState([]);
       const [isLoading, setIsLoading] = React.useState(true);
       useEffect(() => {
             try {
-                  console.log('Problems Page')
-                  axios
-                        .get(GET_PROBLEM_SET, {
+                  toast.promise(async () => {
+                        const promise = await axios.get(GET_PROBLEM_SET, {
                               withCredentials: true,
                         })
-                        .then((res) => {
-                              console.log(res.data.data.result.problems)
-                              setAllProblems(res.data.data.result.problems);
-                        });
+                              .then((res) => {
+                                    console.log(res.data.data.result.problems)
+                                    setAllProblems(res.data.data.result.problems);
+                              });
+                  }, {
+                        pending: 'Loading problems',
+                        success: 'Problems loaded 👌',
+                        error: 'Could not load problems 🤯. Refresh again'
+                  })
             } catch (err) {
                   console.log(err);
             } finally {

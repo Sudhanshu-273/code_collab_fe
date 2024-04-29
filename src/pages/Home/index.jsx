@@ -139,7 +139,7 @@ export default function Home() {
         </div>
 
         <Feedback />
-        <Chatbot />
+        {/* <Chatbot /> */}
       </main>
       <Footer />
     </>

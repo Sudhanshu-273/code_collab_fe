@@ -16,7 +16,7 @@ export default function Logout() {
         axios.get(LOGOUT_URL, { withCredentials: true });
         toast.success('Logged Out Successfully', {
           position: toast.POSITION.BOTTOM_RIGHT,
-          autoClose: 3000,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -26,7 +26,7 @@ export default function Logout() {
       } catch (error) {
         toast.error(error.message, {
           position: 'bottom-right',
-          autoClose: 3000,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -36,7 +36,7 @@ export default function Logout() {
       }
       setAuth(null);
     }
-    navigate('/', { replace: true });
+    navigate('/auth/login', { replace: true });
   }, [navigate]);
 
   return null;
