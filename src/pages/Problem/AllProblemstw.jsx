@@ -50,23 +50,23 @@ const people = [
       },
 ]
 
-export default function Example({data}) {
+export default function Example({ data }) {
 
       const img = 'https://cdn.iconscout.com/icon/free/png-256/free-code-forces-3628695-3029920.png';
 
       return (
             <div className="container mx-auto w-[800px]">
-                  {data.slice(0, 5).map((problem, idx) => (
-                        <ul role="list" className="divide-y divide-gray-100">
-                                    <li key={idx} className="flex justify-between gap-x-6 py-5">
-                                          <div className="flex min-w-0 gap-x-4">
-                                                <img className="h-12 w-12 flex-none" src={img} alt="" />
-                                                <div className="min-w-0 flex-auto">
-                                                      <p className="text-sm font-semibold leading-6 text-gray-900">{problem.name}</p>
-                                                      <p className="mt-1 truncate text-xs leading-5 text-gray-500">{problem.rating || 'Unrated'}</p>
-                                                </div>
+                  {data.slice(0, 10).map((problem, idx) => (
+                        <ul  key={idx} role="list" className="divide-y divide-gray-100">
+                              <li className="flex justify-between gap-x-6 py-5">
+                                    <div className="flex min-w-0 gap-x-4">
+                                          <img className="h-12 w-12 flex-none" src={img} alt="" />
+                                          <div className="min-w-0 flex-auto">
+                                                <p className="text-sm font-semibold leading-6 text-gray-900"><a target="_blank" href={`https://codeforces.com/contest/${problem.contestId}/problem/${problem.index}`}>{problem.name}</a></p>
+                                                <p className="mt-1 truncate text-xs leading-5 text-gray-500">{problem.rating || 'Unrated'}</p>
                                           </div>
-                                          {/* <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                                    </div>
+                                    {/* <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                                                 <p className="text-sm leading-6 text-gray-900">{person.role}</p>
                                                 {person.lastSeen ? (
                                                       <p className="mt-1 text-xs leading-5 text-gray-500">
@@ -81,10 +81,10 @@ export default function Example({data}) {
                                                       </div>
                                                 )}
                                           </div> */}
-                                    </li>
+                              </li>
                         </ul>
                   ))}
-                  <Pagination />
+                  {/* <Pagination /> */}
                   {/* <UnderlineTabs /> */}
             </div>
       )

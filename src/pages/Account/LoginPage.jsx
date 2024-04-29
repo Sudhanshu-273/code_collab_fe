@@ -58,9 +58,9 @@ export default function LoginPage() {
         ...response?.data,
       });
 
-      navigate(searchParams.next || '/problem', { replace: true });
+      navigate(searchParams.next || '/', { replace: true });
       toast.success('Logged in Successfully!', {
-        position: 'bottom-right',
+        position: 'bottom-left',
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
