@@ -20,7 +20,7 @@ const RoomPage = () => {
         container: element,
         sharedLinks: [{
             name: 'Copy Link',
-            url: `http://localhost:3000/room/${roomId}`,
+            url: `http://localhost:3000/communicate/${roomId}`,
         }],
         scenario:{
             mode: ZegoUIKitPrebuilt.GroupCall,
