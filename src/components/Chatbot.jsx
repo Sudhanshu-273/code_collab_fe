@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import axios from '../api/axios';
+import '../styles/ChatBot.css';
 
 function ChatBot() {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
 
   const handleMessageSend = async () => {
-    // Add user message to chat
+    if (!inputText.trim()) return; // Don't send empty messages
     const userMessage = { message: inputText, role: 'user' };
-    setMessages([...messages, userMessage]);
+    setMessages(prevMessages => [...prevMessages, userMessage]);
     setInputText('');
 
     try {
-      // Make API request
       const response = await axios.post(
         '/api/v1/openai',
         {
@@ -20,56 +20,52 @@ function ChatBot() {
         },
         { withCredentials: true }
       );
-      console.log(response.data);
-      // Add bot response to chat
+      
       const botResponse = response.data.data;
       const botMessage = { message: botResponse, role: 'system' };
-      setMessages([...messages, botMessage]);
+      setMessages(prevMessages => [...prevMessages, botMessage]);
     } catch (error) {
       console.error('Error fetching data:', error.message);
       // Handle error accordingly, such as setting error state or displaying an error message
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleMessageSend();
+    }
+  };
+
   return (
-    <div>
-      <div
-        style={{
-          height: '400px',
-          overflowY: 'scroll',
-          border: '1px solid #ccc',
-        }}
-      >
+    <div className="chat-container">
+      <div className="chat-messages">
         {messages.map((msg, index) => (
           <div
             key={index}
-            style={{
-              padding: '5px',
-              textAlign: msg.role === 'user' ? 'right' : 'left',
-            }}
+            className={`message ${msg.role}`}
           >
-            <span style={{ fontWeight: 'bold' }}>
-              {msg.role === 'user' ? 'You: ' : 'Bot: '}
-            </span>
-            {msg.message}
+            <pre>{msg.message}</pre>
           </div>
         ))}
       </div>
-      <div style={{ display: 'flex', marginTop: '10px' }}>
+      <div className="input-container">
         <input
           type='text'
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          style={{ flex: '1', marginRight: '10px', padding: '5px' }}
+          onKeyPress={handleKeyPress} // Handle Enter key press
+          className="input-field"
           placeholder='Type your message here...'
         />
-        <button onClick={handleMessageSend}>Send</button>
+        <button onClick={handleMessageSend} className="send-button">Send</button>
       </div>
     </div>
   );
 }
 
 export default ChatBot;
+
+
 
 
 // import React,{ useState } from 'react';
