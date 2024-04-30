@@ -1,13 +1,17 @@
 .chat-container {
+  /* background-color: red; */
   width: 1200px;
   max-width: 1200px;
-  border: 1px solid #ccc;
+  border: 1px solid #1a0707;
   border-radius: 5px;
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
 }
 
 .chat-messages {
-  height: 300px;
+  height: 400px;
   max-width: 1200px;
   overflow-y: scroll;
   overflow-wrap: break-word;
@@ -18,6 +22,7 @@
   padding: 5px;
   margin-bottom: 5px;
   border-radius: 5px;
+  overflow-wrap: break-word;
 }
 
 .user {
