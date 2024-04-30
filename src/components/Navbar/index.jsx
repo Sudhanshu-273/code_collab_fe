@@ -36,7 +36,9 @@ export default function Navbar() {
         <button className='flex items-center gap-2 -ml-5 sm:ml-0'>
           {/* <img alt=' Code Collab' /> */}
           <strong>
-            <h2>Code Collab &lt;/&gt; </h2>
+            <h2>Code Collab ^_^ 
+                  {/* &lt;/&gt;  */}
+                  </h2>
           </strong>
           {/* todo */}
           {/* yaha src me logo aayega */}
