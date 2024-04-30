@@ -12,25 +12,27 @@
 
 .chat-messages {
   height: 400px;
-  max-width: 1200px;
+  /* max-width: 1200px; */
+  /* width: 100%; */
   overflow-y: scroll;
-  overflow-wrap: break-word;
+  /* overflow-wrap: break-word; */
   padding: 10px;
 }
 
-.message {
+.message>pre {
   padding: 5px;
   margin-bottom: 5px;
   border-radius: 5px;
   overflow-wrap: break-word;
 }
 
-.user {
+.user>pre {
   background-color: #f0f0f0;
   text-align: right;
 }
 
-.system {
+.system>pre {
+  width: fit-content;
   background-color: #d3e9ff;
 }
 
