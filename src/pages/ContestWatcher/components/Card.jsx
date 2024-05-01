@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 import constants from '../constants.js';
 import useTimeString from '../../../hooks/useTimeString';
+import useDataString from '../../../hooks/useDateString';
+
 import calendar from '../../../assets/calendar.svg';
 
 export default function Card({
@@ -73,6 +75,15 @@ export default function Card({
                         </div>
                   </div>
                   <hr />
+                  <div className='flex items-center justify-between md:gap-2 text-xxs'>
+                        <span>
+                              <span className='opacity-60'>Starts Date:</span>{' '}
+                              {useDataString(start)}
+                        </span>
+                        <span>
+                              <span className='opacity-60'>Ends Date:</span> {useDataString(end)}
+                        </span>
+                  </div>
                   <div className='flex items-center justify-between md:gap-2 text-xxs'>
                         <span>
                               <span className='opacity-60'>Starts on:</span>{' '}
