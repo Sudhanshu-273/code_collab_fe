@@ -14,7 +14,10 @@ export default function AllContests() {
   useEffect(() => {
     const fetchContests = async () => {
       const res = await axios.get(ALL_CONTEST_URL);
-      const arr= res.data;
+      const arr = res.data.map(contest => ({
+        ...contest,
+        in_24_hours: false // Add the new property here
+      }));
       arr.reverse();
       setAllContests(arr);
       console.log(arr);
@@ -39,8 +42,8 @@ export default function AllContests() {
 
   return (
     <>
-            <Helmet>
-      <title>Contest Watcher </title>
+      <Helmet>
+        <title>Contest Watcher</title>
       </Helmet>
       <main className='px-8 md:px-12 py-14'>
         <h1 className='text-xl md:text-3xl font-bold'>Contest Watcher</h1>
